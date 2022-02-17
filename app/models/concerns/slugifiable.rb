@@ -1,7 +1,4 @@
 module Slugifiable
-  extend ActiveSupport::Concern
-    
-  included do
     def slug(name)
       artist_match = filename.match(/^(.*) -/)
       song_match   = filename.match(/- (.*) \[/)
@@ -13,7 +10,11 @@ module Slugifiable
       elsif name == genre_match
         genre_match.gsub(name, "-")
     end
-  end
+
+    def find_by_slug
+
+    end
+
 end
 
     
