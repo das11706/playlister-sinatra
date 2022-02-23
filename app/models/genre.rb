@@ -8,4 +8,8 @@ class Genre < ActiveRecord::Base
   def slug
     name.gsub(" ", "-")
   end
+
+  def self.find_by_slug(slug)
+    slug
+  end
 end
