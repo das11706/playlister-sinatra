@@ -10,6 +10,7 @@ class Song < ActiveRecord::Base
     slug_name
   end
 
+  
   def self.find_by_slug(slug)
     Song.all.find do |song|
       if song.slug == slug
@@ -17,6 +18,6 @@ class Song < ActiveRecord::Base
       end
     end
   end
-  
+
 end
 
