@@ -16,7 +16,7 @@ class Song < ActiveRecord::Base
         song
       end
     end
-    
   end
+  
 end
 
