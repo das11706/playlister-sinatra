@@ -1,21 +1,13 @@
 <h1>Create a new Song</h1>
 
-<form action="/songs/<%= :slug %>" method="POST">
+<form action="/songs" method="POST">
   <label for="song_name">Name</label>
   <br>
 
   <input type="text" name="song[name]" id="song_name">
 
-  <br>
-  <p>Select an existing artist or create a new one below.</p>
-
-  <h3>Existing Artists</h3>
-    <% @artists.each do |artist| %>
-       <input type="checkbox" name="song[artist_id][]" id="<%= artist.id %>" value="<%= artist.id %>"><%= artist.name %></input><br>
-    <% end %>
-    <br>
-
-    <h3>New Artist</h3>
+  <br><br>
+  
       <label for="artist_name">Artist Name</label>
       <br>
         <input type="text" name="artist[name]" id="artist_name"></input>
@@ -29,7 +21,7 @@
 
 
     <input type="submit" value="Create">
-    <li>Successfully created song</li>
+    
 </form>
 
 
