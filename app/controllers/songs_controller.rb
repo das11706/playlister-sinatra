@@ -40,15 +40,16 @@ class SongsController < ApplicationController
   #   # @song = Song.create(name: params[:song][:name])
   #   # @artist = @song.artist 
   #   # @song.artist = @artist
-  #   @artist = Artist.find_or_create_by(name: params[:artist][:name])
+  #   # @song = Song.create(name: params[:song][:name])
+  #   @song.artist = Artist.find_or_create_by(name: params[:artist][:name])
   #   @song = Song.find_or_create_by(name: params[:song][:name])
   #   # @genre = Genre.find_or_create_by(name: params[:genre])
    
   #   @song.artist = @artist 
-    
+  #   binding.pry
   #   # @song.save
-  #   # binding.pry
-  #   redirect to "/songs/#{@song.slug}"  
+  #   puts "#{@song.slug}"
+  #   redirect("/songs/#{@song.slug}") 
   # end
 
 end
