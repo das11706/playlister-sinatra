@@ -18,6 +18,7 @@ class ArtistsController < ApplicationController
   get '/artists/:slug' do
     # binding.pry
     @artist = Artist.find_by_slug(params[:slug])
+    # binding.pry
     # @song = Song.find_by(params[:id])
     erb :'/artists/show'
   end
