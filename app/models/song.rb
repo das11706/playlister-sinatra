@@ -7,8 +7,6 @@ class Song < ActiveRecord::Base
 
   def slug
    name.downcase.gsub(" ", "-")
-   
-    # Song.name.downcase.gsub(" ", "-")
   end
 
   
