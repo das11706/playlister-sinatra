@@ -22,33 +22,12 @@ class SongsController < ApplicationController
     erb :'/songs/show'
   end
 
-  # post '/songs' do
-  #   # binding.pry
-  #   @artist = Artist.create(name: params[:artist][:name])
-  #   # @artist =  @song.artist 
-  #   @song.artist = @artist 
-  #   @song = Song.create(name: params[:song][:name])
-    
-  #   # puts "Testing Pry"
-  #   # binding.pry
-  #   redirect to "/songs/#{@song.slug}"  
-  # end
-
   post '/songs' do
-    # @artist = Artist.create(name: params[:artist][:name])
-    # @song.artist = @artist
-    # @song = Song.create(name: params[:song][:name])
-    # @artist = @song.artist 
-    # @song.artist = @artist
-    # @song = Song.create(name: params[:song][:name])
-    @song.artist = Artist.find_or_create_by(name: params[:artist][:name])
-    @song = Song.find_or_create_by(name: params[:song][:name])
-    # @genre = Genre.find_or_create_by(name: params[:genre])
-   
+    @artist = Artist.find_or_create_by(name: params[:artist][:name])
     @song.artist = @artist 
-    binding.pry
-    # @song.save
-    puts "#{@song.slug}"
+    @song = Song.find_or_create_by(name: params[:song][:name])
+    
+    # binding.pry
     redirect("/songs/#{@song.slug}") 
   end
 
