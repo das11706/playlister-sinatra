@@ -23,10 +23,11 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    @artist = Artist.find_or_create_by(name: params[:artist][:name])
-    @song.artist = @artist 
-    @song = Song.find_or_create_by(name: params[:song][:name])
     
+    @artist = Artist.find_or_create_by(name: params[:artist][:name]) 
+    @song = Song.create(params[:song][:name])
+    @song.save
+    @song.artist = @artist 
     # binding.pry
     redirect("/songs/#{@song.slug}") 
   end
