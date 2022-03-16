@@ -22,19 +22,19 @@ class GenresController < ApplicationController
     erb :'/genres/show'
   end
 
-  post '/genres' do
-    @genre = Genre.create(params[:genre])
-    # binding.pry
-    if !params["artist"]["name"].empty?
-      @genre.artist = Artist.create(name: params["artist"]["name"])
-      @genre.save
-    end
-    if !params["song"]["name"].empty?
-      @genre.song = Song.create(name: params["song"]["name"])
-      @genre.save
-    end
-    redirect to "/genres/#{@genre.slug}"
-  end
+  # post '/genres' do
+  #   @genre = Genre.create(params[:genre])
+  #   # binding.pry
+  #   if !params["artist"]["name"].empty?
+  #     @genre.artist = Artist.create(name: params["artist"]["name"])
+  #     @genre.save
+  #   end
+  #   if !params["song"]["name"].empty?
+  #     @genre.song = Song.create(name: params["song"]["name"])
+  #     @genre.save
+  #   end
+  #   redirect to "/genres/#{@genre.slug}"
+  # end
   
 end
 
