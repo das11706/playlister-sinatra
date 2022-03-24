@@ -1,4 +1,4 @@
-
+<% if flash.has?(:message) %> <%= flash[:message] %> <% end %>
 
 <h3><a href="/songs/<%= @song.slug %>"><%=@song.name%></a></h3>
   
@@ -12,6 +12,4 @@
 
 
 
-<li>Successfully created song.</li>
 
-<li>Successfully updated song.</li>
